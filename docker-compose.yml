@@ -4,9 +4,10 @@ services:
       context: .docker/node
       dockerfile: Dockerfile
     container_name: vue-template-frontend
-    working_dir: /app
+    working_dir: /app/vite-project
     volumes:
-      - .:/app
+      - ./vite-project:/app/vite-project
+    command: bash -c "npm run dev"
     ports:
       - "3000:3000"
     tty: true
